@@ -1,0 +1,245 @@
+:root {
+  --fundo: linear-gradient(to bottom, #8B00F9, #420077);
+  --elementos: rgba(95, 0, 169, 0.5);
+  --icone-texto: #fff;
+  --icone-texto2: rgba(255, 255, 255, 0.8);
+  --question-box: #fff;
+  --border: #fff;
+  --progress-bar: #4caf50;
+  --text: black;
+}
+
+.dark-mode {
+  --fundo: #1a1a1a;
+  --elementos: #252525;
+  --icone-texto: #fff;
+  --icone-texto2: rgba(255, 255, 255, 0.8);
+  --question-box: #252525;
+  --border: #8F00FF;
+  --progress-bar: #8F00FF;
+  --text: rgb(222, 222, 222);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--fundo);
+  color: var(--text);
+}
+
+header {
+  position: sticky;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: transparent;
+  z-index: 1000;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: var(--elementos);
+  width: 75vw;
+  list-style: none;
+  align-items: center;
+  margin: 30px auto;
+  border-radius: 10px;
+  backdrop-filter: blur(100px) saturate(100%);
+}
+
+.listicon a {
+  color: var(--icone-texto);
+  font-size: 20px;
+  height: 100%;
+  padding: 15px 20px;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.listicon a:hover {
+  transform: rotate(360deg) scale(1.3);
+}
+
+.listicon button {
+  background: none;
+  border: none;
+  color: var(--icone-texto);
+}
+
+.btn {
+  background: none;
+  cursor: pointer;
+  color: var(--icone-texto);
+  border-style: none;
+  font-size: 20px;
+}
+
+nav {
+  margin: 25px 0px;
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .navigation {
+    -webkit-backdrop-filter: blur(2em);
+    backdrop-filter: blur(2em);
+  }
+}
+
+main {
+  width: calc(75vw + 40px);
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter {
+  width: 100%;
+  height: fit-content;
+  padding: 7px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--question-box);
+  border-radius: 5px;
+}
+
+label {
+  font-weight: 500;
+}
+
+form {
+  width: 100%;
+  height: fit-content;
+  padding: 7px 0px;
+}
+
+.questionBox {
+  resize: none;
+  width: calc(100% - 30px);
+  height: 120px;
+  display: block;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: medium;
+  background-color: var(--question-box);
+  padding: 7px 15px;
+  color: var(--text);
+}
+
+.answers {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: medium;
+  padding: 5px;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+  row-gap: 7px;
+  color: var(--text);
+}
+
+.answerbox {
+  background-color: var(--question-box);
+  width: 100%;
+  border-radius: 5px;
+  min-height: 50px;
+  border: 1px solid var(--border);
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+/*.answerbox:nth-child(2) {
+  border: 2px solid lime;
+}*/
+
+.answerbox h5 {
+  margin-left: 20px;
+}
+
+.buttonsContainers {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonsContainers button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 50px;
+  color: #75E7A9;
+  padding: 0px;
+  height: min-content;
+}
+
+.progress-container {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: 8px;
+}
+
+.progress-container .progress {
+  width: 100%;
+  height: 5px;
+  background-color: var(--progress-bar);
+  padding: 2px 0px;
+  flex: 1;
+  margin: 0 1px;
+}
+
+.card i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 1100px;
+  height: 10px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--progress-bar);
+  width: 100%;
+  transition: width 1s linear;
+}
+
+.time-left {
+  color: white;
+  margin-top: 10px;
+}

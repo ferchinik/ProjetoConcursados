@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concursados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="src\css\home.css">
+</head>
+
+<body>
+  <div class="cover-container">
+    <h1>Olá Concurseiro! 👋 <br> Qual o Seu Nome?</h1>
+    <div class="input-group">
+      <input type="text" class="form-control" id="nome" placeholder="NOME" aria-label="NOME">
+    </div>
+    <div class="input-group">
+      <input type="text" class="form-control" id="sobrenome" placeholder="SOBRENOME" aria-label="SOBRENOME">
+    </div>
+    <button id="comecarBtn" class="btn">Começar!</button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const comecarBtn = document.getElementById("comecarBtn");
+
+      comecarBtn.addEventListener("click", function () {
+        const nome = document.getElementById("nome").value.trim();
+        const sobrenome = document.getElementById("sobrenome").value.trim();
+
+        if (nome && sobrenome) {
+
+          localStorage.setItem("nome", nome);
+          localStorage.setItem("sobrenome", sobrenome);
+
+
+          window.location.href = "landing-page.html";
+        } else {
+          alert("Por favor, preencha todos os campos.");
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
